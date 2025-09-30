@@ -23,8 +23,8 @@ public class JwtUtil {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 3600 * 1000)) // 1 hour expiry
-                .signWith(getSigningKey(), SignatureAlgorithm.HS256)  // Use SecretKey and algorithm
+                .setExpiration(new Date(System.currentTimeMillis() + 3600 * 1000))
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
